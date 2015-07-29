@@ -1,5 +1,5 @@
 #!/bin/sh
-PATH="${PATH}
+PATH="${PATH}"
 pkg update
 pkg install puppet
 echo 'puppet_enable="YES"' >> /etc/rc.conf
