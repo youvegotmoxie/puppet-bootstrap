@@ -1,5 +1,6 @@
 #!/bin/sh
 PATH="${PATH}"
+if [ uid == 0 ]; then
 pkg update
 pkg install puppet
 echo 'puppet_enable="YES"' >> /etc/rc.conf
@@ -7,4 +8,8 @@ echo 'puppet_flags="-v --listen --server fbsd-srv02.servebeer.info"' >> /etc/rc.
 cp ~/puppet-bootstrap/configs/auth.conf /usr/local/etc/puppet/auth.conf
 puppet agent -v --server fbsd-srv02.servebeer.info --waitforcert 60 --test
 service puppet start
+
+else
+	echo "This must be run as root"
+fi
 exit 0
