@@ -23,6 +23,8 @@ puppet-start() {
 	service puppet start
 }
 
+#Only supporting CentOS currently
+
 else
 	echo "`uname` detected"
 puppet-install() {
