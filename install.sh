@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 PATH="${PATH}"
 
 if [ `uname` == 'FreeBSD' ]; then
@@ -26,6 +26,7 @@ puppet-start() {
 #Only supporting CentOS currently
 
 else
+	
 	echo "`uname` detected"
 puppet-install() {
 	rpm -ivh https://yum.puppetlabs.com/el/7/products/x86_64/puppetlabs-release-7-10.noarch.rpm
@@ -45,7 +46,7 @@ puppet-start() {
 }
 fi
 
-if [ uid == 0 ]; then
+if [ `whoami` == root ]; then
 	puppet-install
 	puppet-config
 	puppet-cert
