@@ -56,7 +56,7 @@ puppet-start() {
 }
 fi
 
-if [ `whoami` == root ]; then
+if [ "$(id -u)" != "0" ]; then
 
 	puppet-install
 	puppet-config
