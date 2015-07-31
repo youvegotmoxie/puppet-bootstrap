@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
+#Change to sh for FreeBSD
 PATH="${PATH}"
 
 if [ `uname` == 'FreeBSD' ]; then
-echo "`uname` detected"
+
+	echo "`uname` detected"
 
 puppet-install() {
 	pkg update
@@ -28,6 +30,7 @@ puppet-start() {
 else
 	
 	echo "`uname` detected"
+
 puppet-install() {
 	rpm -ivh https://yum.puppetlabs.com/el/7/products/x86_64/puppetlabs-release-7-10.noarch.rpm
 	yum install puppet
@@ -47,10 +50,12 @@ puppet-start() {
 fi
 
 if [ `whoami` == root ]; then
+
 	puppet-install
 	puppet-config
 	puppet-cert
 	puppet-start
+
 else
 	echo "This script must be run as root."
 fi
