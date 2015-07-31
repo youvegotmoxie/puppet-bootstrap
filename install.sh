@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Change to sh for FreeBSD
+# Change to sh for FreeBSD unless shells/bash is already installed.
 PATH=${PATH}
 
 # Define puppet.master here.
