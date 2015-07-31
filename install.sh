@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Change to sh for FreeBSD
 PATH=${PATH}
-
+SERVER="fbsd-srv02.servbeer.info"
 # FreeBSD.
 if [ `uname` == 'FreeBSD' ]; then
 	echo "`uname` detected"
@@ -14,12 +14,12 @@ puppet-install() {
 
 puppet-config() {
 	echo 'puppet_enable="YES"' >> /etc/rc.conf
-	echo 'puppet_flags="-v --listen --server fbsd-srv02.servebeer.info"' >> /etc/rc.conf
+	echo 'puppet_flags="-v --listen --server ${SERVER}"' >> /etc/rc.conf
 	cp ~/puppet-bootstrap/configs/freebsd/auth.conf /usr/local/etc/puppet/auth.conf
 }
 
 puppet-cert() {
-	puppet agent -v --server fbsd-srv02.servebeer.info --waitforcert 60 --test
+	puppet agent -v --server ${SERVER} --waitforcert 60 --test
 }
 
 puppet-start() {
@@ -39,12 +39,12 @@ puppet-install() {
 	yum install puppet
 }
 puppet-config() {
-	echo 'PUPPET_SERVER=fbsd-srv02.servebeer.info' >> /etc/sysconfig/puppet
+	echo 'PUPPET_SERVER=${SERVER}' >> /etc/sysconfig/puppet
 	cp ~/puppet-bootstrap/configs/linux/auth.conf /etc/puppet/auth.conf
-	echo 'server=fbsd-srv02.servebeer.info' >> /etc/puppet/puppet.conf
+	echo 'server=${SERVER}' >> /etc/puppet/puppet.conf
 }
 puppet-cert() {
-	puppet agent -v --server fbsd-srv02.servebeer.info --waitforcert 60 --test
+	puppet agent -v --server ${SERVER} --waitforcert 60 --test
 }
 puppet-start() {
 	systemctl enable puppet
