@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
-#Change to sh for FreeBSD
-PATH="${PATH}"
+# Change to sh for FreeBSD
+PATH=${PATH}
 
+# FreeBSD.
 if [ `uname` == 'FreeBSD' ]; then
-
 	echo "`uname` detected"
+	echo ""
 
 puppet-install() {
 	pkg update
@@ -25,11 +26,13 @@ puppet-start() {
 	service puppet start
 }
 
-#Only supporting CentOS currently
+# Only supporting CentOS 7 currently.
 
 else
-	
+
+# CentOS
 	echo "`uname` detected"
+	echo ""
 
 puppet-install() {
 	rpm -ivh https://yum.puppetlabs.com/el/7/products/x86_64/puppetlabs-release-7-10.noarch.rpm
