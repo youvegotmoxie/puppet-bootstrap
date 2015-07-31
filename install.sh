@@ -1,12 +1,16 @@
 #!/usr/bin/env bash
 # Change to sh for FreeBSD
 PATH=${PATH}
+
+# Define puppet.master here.
 SERVER="fbsd-srv02.servbeer.info"
-# FreeBSD.
+
+# FreebBSD.
 if [ `uname` == 'FreeBSD' ]; then
 	echo "`uname` detected"
 	echo ""
 
+# Pkgng format only.
 puppet-install() {
 	pkg update
 	pkg install puppet
@@ -52,7 +56,7 @@ puppet-start() {
 }
 fi
 
-if [ `whoami` == root ]; then
+if [ "$(id -u)" != "0" ]; then
 
 	puppet-install
 	puppet-config
