@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Requires bash
+# Requires bash, and you'll probably need git to get this :-)
 PATH=${PATH}
 
 # Tested on Freebsd 10.1 and 10.2-BETA.
