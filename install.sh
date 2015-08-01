@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
+# Requires bash
 PATH=${PATH}
 
 # Tested on Freebsd 10.1 and 10.2-BETA.
@@ -13,7 +15,7 @@ linux-installer() {
 
 # Determine OS as base system layout differs between FreeBSD and CentOS.  Not much
 # logic here though.
-if ["`uname`" == "FreeBSD"]; then
+if [ "`uname`" == "FreeBSD" ]; then
 	echo "`uname` Detected."
 	freebsd-installer
 else
