@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 PATH=${PATH}
 
-# Requires bash, and you'll probably need git to get this :-)
+# Requires bash, change puppet.master in installer/ostype.sh.  Requires bash.
+echo ""
 echo "Make sure you add your clients (puppet agents) to the puppet.master"
 echo "config file, located in $etc/puppet/manifests/site.pp"
+echo ""
 sleep 10
 # Tested on Freebsd 10.1 and 10.2-BETA.
 freebsd-installer() {
