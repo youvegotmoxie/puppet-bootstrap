@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
+PATH=${PATH}
 
 # Requires bash, and you'll probably need git to get this :-)
-PATH=${PATH}
 echo "Make sure you add your clients (puppet agents) to the puppet.master"
 echo "config file, located in $etc/puppet/manifests/site.pp"
 sleep 10
