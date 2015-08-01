@@ -25,7 +25,7 @@ puppet-install() {
 puppet-config() {
 	echo 'puppet_enable="YES"' >> /etc/rc.conf
 	echo 'puppet_flags="-v --listen --server ${SERVER}"' >> /etc/rc.conf
-	cp ~/puppet-bootstrap/configs/freebsd/auth.conf /usr/local/etc/puppet/auth.conf
+	cp configs/freebsd/auth.conf /usr/local/etc/puppet/auth.conf
 }
 
 puppet-cert() {
@@ -40,7 +40,6 @@ puppet-start() {
 
 else
 
-# CentOS
 	echo "`uname` detected"
 
 puppet-install() {
@@ -49,7 +48,7 @@ puppet-install() {
 }
 puppet-config() {
 	echo 'PUPPET_SERVER=${SERVER}' >> /etc/sysconfig/puppet
-	cp ~/puppet-bootstrap/configs/linux/auth.conf /etc/puppet/auth.conf
+	cp configs/linux/auth.conf /etc/puppet/auth.conf
 	echo 'server=${SERVER}' >> /etc/puppet/puppet.conf
 }
 puppet-cert() {
