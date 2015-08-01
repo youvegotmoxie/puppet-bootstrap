@@ -1,14 +1,20 @@
 #!/usr/bin/env bash
+
 # Change to sh for FreeBSD unless shells/bash is already installed.
+if which bash &> /dev/null; then
+	echo "Bash Detected."
+else
+	echo "Please change identifier to sh."
+fi
+
 PATH=${PATH}
 
-# Define puppet.master here.
-SERVER="fbsd-srv02.servbeer.info"
+# Define puppet.master.
+source configs/global/install.conf
 
 # FreebBSD.
 if [ `uname` == 'FreeBSD' ]; then
 	echo "`uname` detected"
-	echo ""
 
 # Pkgng format only.
 puppet-install() {
@@ -36,7 +42,6 @@ else
 
 # CentOS
 	echo "`uname` detected"
-	echo ""
 
 puppet-install() {
 	rpm -ivh https://yum.puppetlabs.com/el/7/products/x86_64/puppetlabs-release-7-10.noarch.rpm
