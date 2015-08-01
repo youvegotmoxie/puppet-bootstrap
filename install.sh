@@ -5,12 +5,14 @@ PATH=${PATH}
 
 # Tested on Freebsd 10.1 and 10.2-BETA.
 freebsd-installer() {
-	installer/freebsd-installer.sh
+	cd installer
+	bash freebsd-installer.sh
 }
 
 # Tested on CentOS 7.
 linux-installer() {
-	installer/linux-installer.sh
+	cd installer
+	bash linux-installer.sh
 }
 
 # Determine OS as base system layout differs between FreeBSD and CentOS.  Not much
