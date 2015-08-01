@@ -3,7 +3,7 @@
 # Requires bash, and you'll probably need git to get this :-)
 PATH=${PATH}
 echo "Make sure you add your clients (puppet agents) to the puppet.master"
-echo "config file, located in $etc/puppet/manifests/site.pp"
+echo "config file, located in ~etc/puppet/manifests/site.pp"
 wait 5
 # Tested on Freebsd 10.1 and 10.2-BETA.
 freebsd-installer() {
