@@ -2,9 +2,6 @@
 
 PATH=${PATH}
 
-# Define puppet.master.
-source configs/global/install.conf
-
 # Pkgng format only.
 puppet-install() {
 	pkg update
@@ -18,7 +15,7 @@ puppet-config() {
 }
 
 puppet-cert() {
-	puppet agent -v --server ${SERVER} --waitforcert ${TIMEOUT} --test
+	puppet agent -v --server fbsd-srv02.servebeer.info --waitforcert 60 --test
 }
 
 puppet-start() {

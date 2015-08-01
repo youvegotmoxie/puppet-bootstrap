@@ -2,9 +2,6 @@
 
 PATH=${PATH}
 
-# Define puppet.master.
-source configs/global/install.conf
-
 # Only supporting CentOS 7
 puppet-install() {
 	rpm -ivh https://yum.puppetlabs.com/el/7/products/x86_64/puppetlabs-release-7-10.noarch.rpm
@@ -16,7 +13,7 @@ puppet-config() {
 	echo 'server=${SERVER}' >> /etc/puppet/puppet.conf
 }
 puppet-cert() {
-	puppet agent -v --server ${SERVER} --waitforcert ${TIMEOUT} --test
+	puppet agent -v --server fbsd-srv02.servebeer.info --waitforcert 60 --test
 }
 puppet-start() {
 	systemctl enable puppet
