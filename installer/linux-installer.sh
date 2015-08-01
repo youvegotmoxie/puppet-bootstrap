@@ -2,6 +2,7 @@
 
 PATH=${PATH}
 SERVER="fbsd-srv02.servebeer.info"
+
 # Only supporting CentOS 7
 puppet-install() {
 	rpm -ivh https://yum.puppetlabs.com/el/7/products/x86_64/puppetlabs-release-7-10.noarch.rpm

@@ -2,6 +2,7 @@
 
 PATH=${PATH}
 SERVER="fbsd-srv02.servebeer.info"
+
 # Pkgng format only.
 puppet-install() {
 	pkg update
