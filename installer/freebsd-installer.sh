@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 PATH=${PATH}
-
+SERVER="fbsd-srv02.servebeer.info"
 # Pkgng format only.
 puppet-install() {
 	pkg update
@@ -10,7 +10,7 @@ puppet-install() {
 
 puppet-config() {
 	echo 'puppet_enable="YES"' >> /etc/rc.conf
-	echo 'puppet_flags="-v --listen --server fbsd-srv02.servebeer.info"' >> /etc/rc.conf
+	echo 'puppet_flags="-v --listen --server ${SERVER}"' >> /etc/rc.conf
 	cp configs/freebsd/auth.conf /usr/local/etc/puppet/auth.conf
 }
 
