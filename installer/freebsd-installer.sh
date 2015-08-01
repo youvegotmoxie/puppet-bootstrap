@@ -25,7 +25,7 @@ puppet-start() {
 	service puppet start
 }
 
-if [ "$(id -u)" != "0" ]; then
+if [ "$(id -u)" == "0" ]; then
 
 	puppet-install
 	puppet-config
