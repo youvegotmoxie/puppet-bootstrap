@@ -14,7 +14,7 @@ puppet-config() {
 	echo 'server=${SERVER}' >> /etc/puppet/puppet.conf
 }
 puppet-cert() {
-	puppet agent -v --server ${SERVER} --waitforcert 60 --test
+	puppet agent -v --server ${SERVER} --waitforcert ${TIMEOUT} --test
 }
 puppet-start() {
 	systemctl enable puppet
