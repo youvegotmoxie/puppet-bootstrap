@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 PATH=${PATH}
-SERVER="fbsd-srv02.servebeer.info"
+source installer/configs/global/install.conf
 
 # Only supporting CentOS 7
 puppet-install() {

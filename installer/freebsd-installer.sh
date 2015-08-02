@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 PATH=${PATH}
-SERVER="fbsd-srv02.servebeer.info"
+source installer/configs/global/install.conf
 
 # Pkgng format only.
 puppet-install() {
