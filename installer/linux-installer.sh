@@ -10,11 +10,11 @@ puppet-install() {
 }
 puppet-config() {
 	echo 'PUPPET_SERVER=${SERVER}' >> /etc/sysconfig/puppet
-	cp configs/linux/auth.conf /etc/puppet/auth.conf
+	cp installer/configs/linux/auth.conf /etc/puppet/auth.conf
 	echo 'server=${SERVER}' >> /etc/puppet/puppet.conf
 }
 puppet-cert() {
-	puppet agent -v --server fbsd-srv02.servebeer.info --waitforcert 60 --test
+	puppet agent -v --server ${SERVER} --waitforcert 60 --test
 }
 puppet-start() {
 	systemctl enable puppet
