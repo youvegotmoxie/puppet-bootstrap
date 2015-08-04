@@ -14,6 +14,9 @@ puppet-config() {
 	echo 'server='${SERVER}'' >> /etc/puppet/puppet.conf
 }
 puppet-cert() {
+	echo ""
+	echo "Check your puppet.master for a pending cert"
+	echo ""
 	puppet agent -v --server ${SERVER} --waitforcert ${TIMEOUT} --test
 }
 puppet-start() {
