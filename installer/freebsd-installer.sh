@@ -26,6 +26,7 @@ puppet-start() {
 	service puppet start
 }
 
+# Determine if root is running script.
 if [ "$(id -u)" == "0" ]; then
 
 	puppet-install

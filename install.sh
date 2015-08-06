@@ -14,6 +14,10 @@ freebsd-installer() {
 	bash installer/freebsd-installer.sh
 }
 
+# NetBSD 6.1.5 - waiting for NetBSD to fix packages.
+netbsd-installer() {
+	bash installer/netbsd-installer.sh
+}
 # Tested on CentOS 7.
 linux-installer() {
 	bash installer/linux-installer.sh
@@ -24,6 +28,10 @@ linux-installer() {
 if [ "`uname`" == "FreeBSD" ]; then
 	echo "`uname` Detected."
 	freebsd-installer
+elif
+	["`uname`" == "NetBSD"]
+	echo "`uname` Detected."
+	netbsd-installer
 else
 	echo "`uname` Detected."
 	linux-installer
