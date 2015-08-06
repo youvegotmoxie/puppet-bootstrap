@@ -9,7 +9,7 @@ export PKG_PATH=http://ftp.usa.openbsd.org/pub/OpenBSD/`uname -r`/packages/`arch
 pkg_add puppet
 }
 
-puppet-configure(){
+puppet-config(){
 mv /etc/puppet/auth.conf /etc/puppet/auth.conf-local
 cp installer/configs/openbsd/auth.conf /etc/puppet/auth.conf
 echo "puppetd=YES" >> /etc/rc.conf.local
