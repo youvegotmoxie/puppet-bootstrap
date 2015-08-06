@@ -12,7 +12,8 @@ pkg_add puppet
 puppet-configure(){
 mv /etc/puppet/auth.conf /etc/puppet/auth.conf-local
 cp installer/configs/openbsd/auth.conf /etc/puppet/auth.conf
-echo 'puppetd=YES' >> /etc/rc.conf.local
+echo "puppetd=YES" >> /etc/rc.conf.local
+sleep 5
 echo "server = '${SERVER}'" >> /etc/puppet/puppet.conf
 }
 
