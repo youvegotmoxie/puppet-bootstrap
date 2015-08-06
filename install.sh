@@ -18,6 +18,12 @@ freebsd-installer() {
 netbsd-installer() {
 	bash installer/netbsd-installer.sh
 }
+
+# Tested on OpenBSD 5.7
+openbsd-installer() {
+	bash installer/openbsd-installer.sh
+}
+
 # Tested on CentOS 7.
 linux-installer() {
 	bash installer/linux-installer.sh
@@ -32,6 +38,10 @@ elif
 	["`uname`" == "NetBSD"]
 	echo "`uname` Detected."
 	netbsd-installer
+elif
+	["`uname`" == "OpenBSD"]
+	echo "`uname` Detected."
+	openbsd-installer
 else
 	echo "`uname` Detected."
 	linux-installer
