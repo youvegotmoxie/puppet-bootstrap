@@ -34,11 +34,11 @@ linux-installer() {
 if [ "`uname`" == "FreeBSD" ]; then
 	echo "`uname` Detected."
 	freebsd-installer
-elif
+else
 	["`uname`" == "NetBSD"]
 	echo "`uname` Detected."
 	netbsd-installer
-elif
+else
 	["`uname`" == "OpenBSD"]
 	echo "`uname` Detected."
 	openbsd-installer
