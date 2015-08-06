@@ -14,7 +14,7 @@ freebsd-installer() {
 	bash installer/freebsd-installer.sh
 }
 
-# NetBSD 6.1.5 - waiting for NetBSD to fix packages.
+# Tested on NetBSD 6.1.5 - broken due to incorrect facter versin 
 netbsd-installer() {
 	bash installer/netbsd-installer.sh
 }
