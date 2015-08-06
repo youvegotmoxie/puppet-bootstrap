@@ -29,17 +29,16 @@ linux-installer() {
 	bash installer/linux-installer.sh
 }
 
-# Determine OS as base system layout differs between FreeBSD and CentOS.  Not much
-# logic here though.
+# Determine OS as base system layout differs between OS's.
 if [ "`uname`" == "FreeBSD" ]; then
 	echo "`uname` Detected."
 	freebsd-installer
 elif
-	["`uname`" == "NetBSD"]; then
+	[ "`uname`" == "NetBSD" ]; then
 	echo "`uname` Detected."
 	netbsd-installer
 elif
-	["`uname`" == "OpenBSD"]; then
+	[ "`uname`" == "OpenBSD" ]; then
 	echo "`uname` Detected."
 	openbsd-installer
 else
