@@ -14,11 +14,6 @@ freebsd-installer() {
 	bash installer/freebsd-installer.sh
 }
 
-# NetBSD 6.1.5 - waiting for NetBSD to fix packages.
-netbsd-installer() {
-	bash installer/netbsd-installer.sh
-}
-
 # Tested on OpenBSD 5.7
 openbsd-installer() {
 	bash installer/openbsd-installer.sh
@@ -33,10 +28,6 @@ linux-installer() {
 if [ "`uname`" == "FreeBSD" ]; then
 	echo "`uname` Detected."
 	freebsd-installer
-elif
-	[ "`uname`" == "NetBSD" ]; then
-	echo "`uname` Detected."
-	netbsd-installer
 elif
 	[ "`uname`" == "OpenBSD" ]; then
 	echo "`uname` Detected."
