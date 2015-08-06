@@ -8,17 +8,20 @@ puppet-install() {
 	rpm -ivh https://yum.puppetlabs.com/el/7/products/x86_64/puppetlabs-release-7-10.noarch.rpm
 	yum install puppet
 }
+
 puppet-config() {
 	echo 'PUPPET_SERVER='${SERVER}'' >> /etc/sysconfig/puppet
 	cp installer/configs/linux/auth.conf /etc/puppet/auth.conf
 	echo 'server='${SERVER}'' >> /etc/puppet/puppet.conf
 }
+
 puppet-cert() {
 	echo ""
 	echo "Check your puppet.master for a pending cert"
 	echo ""
 	puppet agent -v --server ${SERVER} --waitforcert ${TIMEOUT} --test
 }
+
 puppet-start() {
 	systemctl enable puppet
 	systemctl start puppet
