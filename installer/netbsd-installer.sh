@@ -11,7 +11,7 @@ puppet-install() {
 if [ -d "/usr/pkgsrc"]; then
     cd /usr/pkgsrc/sysutils/puppet
     # Fails here as NetBSD has port set to PKG_FAIL
-    make install clean
+    make && make install && make clean
 else
     wget ftp://ftp.NetBSD.org/pub/pkgsrc/pkgsrc-2015Q2/pkgsrc.tar.gz
     gunzip pkgsrc.tar.gz && tar -xvf pkgsrc.tar -C /usr
