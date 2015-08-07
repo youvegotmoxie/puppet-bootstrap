@@ -9,7 +9,7 @@ puppet-install() {
   pkg_add puppet
 }
 
-puppet-config(){
+puppet-config() {
   mv /etc/puppet/auth.conf /etc/puppet/auth.conf-local
   cp installer/configs/openbsd/auth.conf /etc/puppet/auth.conf
   echo "puppetd=YES" >> /etc/rc.conf.local
@@ -17,14 +17,14 @@ puppet-config(){
   echo "server = '${SERVER}'" >> /etc/puppet/puppet.conf
 }
 
-puppet-cert(){
+puppet-cert() {
   echo ""
   echo "Check your puppet.master for a pending cert"
   echo ""
   puppet agent -v --server ${SERVER} --waitforcert ${TIMEOUT} --test
 }
 
-puppet-start(){
+puppet-start() {
   /etc/rc.d/puppetd start
 }
 
