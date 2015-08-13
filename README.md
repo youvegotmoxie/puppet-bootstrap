@@ -4,4 +4,5 @@
 
 **Usage**
 ```bash
-bash install.sh```
+bash install.sh
+```
