@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 PATH=${PATH}
 source installer/configs/global/install.conf

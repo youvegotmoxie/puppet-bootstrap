@@ -28,6 +28,7 @@ puppet-start() {
   /etc/rc.d/puppetd start
 }
 
+# Determine if root is running script.
 if [ "$(id -u)" == "0" ]; then
 
   puppet-install
