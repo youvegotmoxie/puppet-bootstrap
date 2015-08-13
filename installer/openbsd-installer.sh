@@ -2,7 +2,7 @@
 
 PATH=${PATH}
 source installer/configs/global/install.conf
--
+
 # Export remote repo
 puppet-install() {
   export PKG_PATH=http://ftp.usa.openbsd.org/pub/OpenBSD/`uname -r`/packages/`arch -s`
